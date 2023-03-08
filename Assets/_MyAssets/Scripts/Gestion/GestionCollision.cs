@@ -21,11 +21,13 @@ public class GestionCollision : MonoBehaviour
      */
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player" && !_touche)  // Si l'objet avec la collision s'est produite est le joueur et qu'il n'a pas déjà et touché
+        //if (collision.gameObject.tag == "Player" && !_touche)  // Si l'objet avec la collision s'est produite est le joueur et qu'il n'a pas déjà eté touché
+        if(!_touche)
         {
-                gameObject.GetComponent<MeshRenderer>().material.color = Color.red;  //change la couleur du matériel à rouge
+                
                 _gestionJeu.AugmenterPointage();  // Appelle la méthode publique dans GestionJeu pour augmenter le pointage
                 _touche = true;  // change le booléen à vrai pour indiqué que l'objet a été touché
+                GetComponent<MeshRenderer>().material.color = Color.red;  //change la couleur du matériel à rouge
         }
     }
 }

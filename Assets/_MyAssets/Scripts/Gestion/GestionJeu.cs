@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GestionJeu : MonoBehaviour
 {
@@ -38,10 +39,33 @@ public class GestionJeu : MonoBehaviour
         InstructionsDepart();  // Affiche les instructions de d�part
     }
 
-    /*
-     * M�thode qui affiche les instructions au d�part
-     */
-    private static void InstructionsDepart()
+    //Changer la couleur du terrain selon le niveau
+    //private void Update()
+    //{
+    //    //Gestion de la scèene par rapport au mouvementJoueur
+    //    Scene currentScene = SceneManager.GetActiveScene();
+    //    string sceneName = currentScene.name;
+    //    //Gestion de la texture du sol
+    //    MeshRenderer _solMat = GetComponent<MeshRenderer>();
+
+    //    if (sceneName == "Niveau1" || sceneName == "Niveau3")
+    //    {
+    //        Material _solMat = my_renderer.material;
+    //    }
+    //    else if (sceneName == "Niveau2")
+    //    {
+    //        Sol.mat(floor2)
+    //    }
+
+
+
+    //}
+   
+
+/*
+ * M�thode qui affiche les instructions au d�part
+ */
+private static void InstructionsDepart()
     {
         Debug.Log("*** Course a obstacles");
         Debug.Log("Le but du jeu est d'atteindre le sandwich le plus rapidement possible dans chaque niveau.");
