@@ -5,29 +5,29 @@ using UnityEngine;
 public class GestionCollision : MonoBehaviour
 {
     // ***** Attributs *****
-    private GestionJeu _gestionJeu;  // Sert à récupérer le l'attribut pointage dans la classe GestionJeu
-    private bool _touche;  // Booléen qui permet de détecter si l'objet a été touché
+    private GestionJeu _gestionJeu;  // Sert ï¿½ rï¿½cupï¿½rer le l'attribut pointage dans la classe GestionJeu
+    private bool _touche;  // Boolï¿½en qui permet de dï¿½tecter si l'objet a ï¿½tï¿½ touchï¿½
 
-    // ***** Méthodes privées *****
+    // ***** Mï¿½thodes privï¿½es *****
     private void Start()
     {
-        _gestionJeu = FindObjectOfType<GestionJeu>();  // lie la variable au gameObject GestionJeu de la scène
-        _touche= false;  // initialise le booléen à faux au début de la scène
+        _gestionJeu = FindObjectOfType<GestionJeu>();  // lie la variable au gameObject GestionJeu de la scï¿½ne
+        _touche= false;  // initialise le boolï¿½en ï¿½ faux au dï¿½but de la scï¿½ne
     }
 
     /* 
-     * Rôle : Méthode qui se déclenche quand une collision se produit avec l'objet
-     * Entrée : un objet de type Collision qui représente l'objet avec qui la collision s'est produite
+     * Rï¿½le : Mï¿½thode qui se dï¿½clenche quand une collision se produit avec l'objet
+     * Entrï¿½e : un objet de type Collision qui reprï¿½sente l'objet avec qui la collision s'est produite
      */
     private void OnCollisionEnter(Collision collision)
     {
-        //if (collision.gameObject.tag == "Player" && !_touche)  // Si l'objet avec la collision s'est produite est le joueur et qu'il n'a pas déjà eté touché
+        //if (collision.gameObject.tag == "Player" && !_touche)  // Si l'objet avec la collision s'est produite est le joueur et qu'il n'a pas dï¿½jï¿½ etï¿½ touchï¿½
         if(!_touche)
         {
-                
-                _gestionJeu.AugmenterPointage();  // Appelle la méthode publique dans GestionJeu pour augmenter le pointage
-                _touche = true;  // change le booléen à vrai pour indiqué que l'objet a été touché
-                GetComponent<MeshRenderer>().material.color = Color.red;  //change la couleur du matériel à rouge
+                Debug.Log("Allo");
+                _gestionJeu.AugmenterPointage();  // Appelle la mï¿½thode publique dans GestionJeu pour augmenter le pointage
+                _touche = true;  // change le boolï¿½en ï¿½ vrai pour indiquï¿½ que l'objet a ï¿½tï¿½ touchï¿½
+                GetComponent<MeshRenderer>().material.color = Color.red;  //change la couleur du matï¿½riel ï¿½ rouge
         }
     }
 }
