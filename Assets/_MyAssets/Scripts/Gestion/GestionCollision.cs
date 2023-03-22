@@ -7,6 +7,8 @@ public class GestionCollision : MonoBehaviour
     // ***** Attributs *****
     private GestionJeu _gestionJeu;  // Sert � r�cup�rer le l'attribut pointage dans la classe GestionJeu
     private bool _touche;  // Bool�en qui permet de d�tecter si l'objet a �t� touch�
+    [SerializeField] private Material _materielBoy0 =  default;
+    [SerializeField] private GameObject _Boy0;
 
     // ***** M�thodes priv�es *****
     private void Start()
@@ -22,12 +24,27 @@ public class GestionCollision : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //if (collision.gameObject.tag == "Player" && !_touche)  // Si l'objet avec la collision s'est produite est le joueur et qu'il n'a pas d�j� et� touch�
-        if(!_touche)
-        {
+            if (!_touche)  // Si l'objet avec la collision s'est produite est le joueur et qu'il n'a pas d�j� et� touch�
+            {
+
+            if (gameObject.name == "Boy0")
+            {
+                _gestionJeu.AugmenterPointage();  // Appelle la m�thode publique dans GestionJeu pour augmenter le pointage
+                _touche = true;  // change le bool�en � vrai pour indiqu� que l'objet a �t� touch�
+                GetComponent<MeshRenderer>().material = _materielBoy0;  //change la couleur du mat�riel � rouge
+            }
+            else
+            {
                 Debug.Log("Allo");
                 _gestionJeu.AugmenterPointage();  // Appelle la m�thode publique dans GestionJeu pour augmenter le pointage
                 _touche = true;  // change le bool�en � vrai pour indiqu� que l'objet a �t� touch�
                 GetComponent<MeshRenderer>().material.color = Color.red;  //change la couleur du mat�riel � rouge
+            }
+        
+
+
+            
+            
         }
     }
 }
