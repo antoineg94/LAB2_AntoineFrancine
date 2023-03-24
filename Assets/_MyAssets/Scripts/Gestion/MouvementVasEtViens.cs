@@ -14,7 +14,7 @@ public class MouvementVasEtViens : MonoBehaviour
     void Update()
     {
         Vector3 v = PositionDebut;
-        v.z += distance * Mathf.Sin(Time.time * vitesse);
+        v.x += distance * Mathf.Sin(Time.time * vitesse);
         transform.position = v;
     }
 }

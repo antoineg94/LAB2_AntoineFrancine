@@ -55,7 +55,14 @@ private void MouvementsJoueurGlace()
     float positionZ = Input.GetAxis("Vertical");  // R�cup�re la valeur de l'axe vertical de l'input manager
     Vector3 direction = new Vector3(positionX, 0f, positionZ);  // �tabli la direction du vecteur � appliquer sur le joueur
     _rb.AddForce(direction * Time.fixedDeltaTime * _vitesse);  // Applique une force sur le joueur dans la direction du vecteur
-}     // ***** M�thodes publiques *****     /*
+        direction.Normalize(); 
+        if (direction != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, _vitesse * Time.deltaTime);
+            // transform.forward = direction;
+        }
+    }     // ***** M�thodes publiques *****     /*
 //*M�thode appel� en fin de partie qui rend le gameObject Player inactif
      
 
