@@ -9,7 +9,8 @@ public class ReactivationCollision : MonoBehaviour
     // ***** Attributs *****
     private GestionJeu _gestionJeu;  
     private bool _touche;  // Bool�en qui permet de d�tecter si l'objet a �t� touch�
-
+    [SerializeField] GameObject _ring;
+    
 
 
     // ***** M�thodes priv�es *****
@@ -17,6 +18,7 @@ public class ReactivationCollision : MonoBehaviour
     {
         _gestionJeu = FindObjectOfType<GestionJeu>();  // lie la variable au gameObject GestionJeu de la sc�ne
         _touche = false;  // initialise le bool�en � faux au d�but de la sc�ne
+        _ring.SetActive(false);//désactive la potion
     }
 
 
@@ -31,6 +33,7 @@ public class ReactivationCollision : MonoBehaviour
         if (!_touche)
         {
             Debug.Log("Allo");
+            _ring.SetActive(true);//désactive la potion
             _gestionJeu.AugmenterPointage();  // Appelle la m�thode publique dans GestionJeu pour augmenter le pointage
             _touche = true;  // change le bool�en � vrai pour indiqu� que l'objet a �t� touch�
             GetComponent<MeshRenderer>().material.color = Color.red;  //change la couleur du mat�riel � rouge
@@ -46,7 +49,7 @@ public class ReactivationCollision : MonoBehaviour
     private void ColorDefault()
     {
 
-
+        _ring.SetActive(false);//désactive la potion
         GetComponent<MeshRenderer>().material.color = default;
         _touche = false;
     }
