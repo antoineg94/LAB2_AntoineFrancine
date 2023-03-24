@@ -357,6 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7371479913277299873}
   - component: {fileID: 2312279849724324816}
+  - component: {fileID: -6716502152154787284}
   m_Layer: 0
   m_Name: SM_Bucket
   m_TagString: Untagged
@@ -416,6 +417,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 4719372479783380260}
   m_Enabled: 1
+--- !u!114 &-6716502152154787284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856267043583182363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e26dd68382074146abc346e75418cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materielBoy0: {fileID: 0}
+  _Boy0: {fileID: 0}
 --- !u!1 &8345311493748869137
 GameObject:
   m_ObjectHideFlags: 0

@@ -357,6 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7826180026461486764}
   - component: {fileID: 3082206991468251613}
+  - component: {fileID: 5848870280280824013}
   m_Layer: 0
   m_Name: SM_Fence_1
   m_TagString: Untagged
@@ -416,6 +417,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 4883703724418789436}
   m_Enabled: 1
+--- !u!114 &5848870280280824013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482728480716497942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e26dd68382074146abc346e75418cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materielBoy0: {fileID: 0}
+  _Boy0: {fileID: 0}
 --- !u!1 &8516075949875548173
 GameObject:
   m_ObjectHideFlags: 0

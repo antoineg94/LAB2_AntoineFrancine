@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 826753936295846366}
   - component: {fileID: 5558330321853699759}
   - component: {fileID: 4808524109119305529}
+  - component: {fileID: 8042060035720471587}
   m_Layer: 0
   m_Name: Nest_18
   m_TagString: Untagged
@@ -77,6 +78,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8185511195828706398, guid: f1f3941d369f00a41ad2eddebc886ca8, type: 3}
+--- !u!114 &8042060035720471587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14329933889387364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e26dd68382074146abc346e75418cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materielBoy0: {fileID: 0}
+  _Boy0: {fileID: 0}
 --- !u!1 &192053946100270036
 GameObject:
   m_ObjectHideFlags: 0

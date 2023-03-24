@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 874904143613880409}
   - component: {fileID: 5367823496658411304}
+  - component: {fileID: 7446753807236853914}
   m_Layer: 0
   m_Name: SM_Sign_4
   m_TagString: Untagged
@@ -69,6 +70,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 3816064339985006640}
   m_Enabled: 1
+--- !u!114 &7446753807236853914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535814017154757347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e26dd68382074146abc346e75418cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materielBoy0: {fileID: 0}
+  _Boy0: {fileID: 0}
 --- !u!1 &3995381525686098985
 GameObject:
   m_ObjectHideFlags: 0

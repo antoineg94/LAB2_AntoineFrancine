@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3476621839791957619}
   - component: {fileID: 8531346624900010242}
+  - component: {fileID: -6094061671678919543}
   m_Layer: 0
   m_Name: SM_Stone_Obelisk
   m_TagString: Untagged
@@ -235,6 +236,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 850434873472423249}
   m_Enabled: 1
+--- !u!114 &-6094061671678919543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4284226751721798857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e26dd68382074146abc346e75418cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materielBoy0: {fileID: 0}
+  _Boy0: {fileID: 0}
 --- !u!1 &4769126996622253843
 GameObject:
   m_ObjectHideFlags: 0

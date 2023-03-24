@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3191447069899343012}
   - component: {fileID: 7642700489125098453}
+  - component: {fileID: -181519910131441257}
   m_Layer: 0
   m_Name: SM_Box
   m_TagString: Untagged
@@ -152,6 +153,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2716643096611118381}
   m_Enabled: 1
+--- !u!114 &-181519910131441257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810699852969647646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e26dd68382074146abc346e75418cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materielBoy0: {fileID: 0}
+  _Boy0: {fileID: 0}
 --- !u!1 &3596133885597419461
 GameObject:
   m_ObjectHideFlags: 0

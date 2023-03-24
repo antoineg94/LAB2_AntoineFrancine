@@ -13,7 +13,20 @@ public class Player : MonoBehaviour
     private void Start()
     {
         // Position initiale du joueur
-        transform.position = new Vector3(0f, 0.1f, 0f);  // place le joueur � sa position initiale 
+       
+        if (SceneManager.GetActiveScene().name == "Niveau1")
+        {
+            transform.position = new Vector3(0f, 0.1f, 0f);
+        }
+        if (SceneManager.GetActiveScene().name == "Niveau2")
+        {
+            transform.position = new Vector3(-40f, 0.1f, -40f);
+        }
+        if (SceneManager.GetActiveScene().name == "Niveau3")
+        {
+            transform.position = new Vector3(40f, 0.1f, -40f);
+        }
+       // transform.position = new Vector3(0f, 0.1f, 0f);  // place le joueur � sa position initiale 
     _rb = GetComponent<Rigidbody>();  // R�cup�re le rigidbody du Player
         _gestionJeu = FindObjectOfType<GestionJeu>();  // r�cup�re sur la sc�ne le gameObject de type GestionJeu
     }     // Ici on utilise FixedUpdate car les mouvements du joueurs implique le d�placement d'un rigidbody
