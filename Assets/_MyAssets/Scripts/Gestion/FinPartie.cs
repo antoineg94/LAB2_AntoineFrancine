@@ -46,13 +46,13 @@ public class FinPartie : MonoBehaviour
             {
                 int accrochages = _gestionJeu.GetPointage();  // Récupère le pointage total dans gestion jeu
                 float tempsTotalniv1 = _gestionJeu.GetTempsNiv1() + _gestionJeu.GetAccrochagesNiv1();  //Calcul le temps total pour le niveau 1
-                float _tempsNiveau2 = Time.time - _gestionJeu.GetTempsNiv1(); // Calcul le temps pour le niveau 2
-                int _accrochagesNiveau2 = _gestionJeu.GetPointage() - _gestionJeu.GetAccrochagesNiv1(); // Calcul le nombre d'accrochages pour le niveau 2
+                float _tempsNiveau2 = _gestionJeu.GetTempsNiv2(); // Calcul le temps pour le niveau 2
+                int _accrochagesNiveau2 = _gestionJeu.GetAccrochagesNiv2(); // Calcul le nombre d'accrochages pour le niveau 2
                 float tempsTotalniv2 = _tempsNiveau2 + _accrochagesNiveau2; // Calcul le temps total pour le niveau 2
 
 
 
-                float _tempsNiveau3 = Time.time - (tempsTotalniv1 + _tempsNiveau2); // Calcul le temps pour le niveau 2
+                float _tempsNiveau3 = Time.time - (_gestionJeu.GetTempsNiv1() + _gestionJeu.GetTempsNiv2()); // Calcul le temps pour le niveau 2
 
 
 
@@ -75,7 +75,7 @@ public class FinPartie : MonoBehaviour
                 Debug.Log("Le temps pour le niveau 3 est de : " + _tempsNiveau3.ToString("f2") + " secondes");
                 Debug.Log("Vous avez accroché au niveau 3 : " + _accrochagesNiveau3 + " obstacles");
                 Debug.Log("Temps total niveau 3 : " + tempsTotalniv3.ToString("f2") + " secondes");
-                Debug.Log("Le temps total pour les trois niveau est de : " + (tempsTotalniv1 + tempsTotalniv2 + tempsTotalniv3).ToString("f2") + " secondes");
+                Debug.Log("Le temps total pour les trois niveaux est de : " + (tempsTotalniv1 + tempsTotalniv2 + tempsTotalniv3).ToString("f2") + " secondes");
 
 
 
@@ -87,7 +87,7 @@ public class FinPartie : MonoBehaviour
 
 
 
-                _gestionJeu.SetNiveau2(_gestionJeu.GetAccrochagesNiv1(), _gestionJeu.GetTempsNiv2());
+                _gestionJeu.SetNiveau2(_gestionJeu.GetAccrochagesNiv2(), Time.time - _gestionJeu.GetTempsNiv1());
                 SceneManager.LoadScene(noScene + 1);
             }
             else

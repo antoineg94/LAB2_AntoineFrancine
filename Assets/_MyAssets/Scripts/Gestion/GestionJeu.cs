@@ -3,27 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class GestionJeu : MonoBehaviour
 {
     // ***** Attributs *****
 
-    private int _pointage = 0;  // Attribut qui conserve le nombre d'accrochages
-    private int _accrochageNiveau1 = 0;  // Atribut qui conserve le nombre d'accrochage pour le niveau 1
-    private float _tempsNiveau1 = 0.0f;  // Attribut qui conserve le temps pour le niveau 1
+    
 
-    private int _accrochageNiveau2 = 0;  // Atribut qui conserve le nombre d'accrochage pour le niveau 2
-    private float _tempsNiveau2 = 0.0f;  // Attribut qui conserve le temps pour le niveau 2
+    private int _pointage = 0;  // Attribut qui conserve le nombre d'accrochages
+    private int _accrochageNiveau1 = 0;  // Atribut qui conserve le nombre d'accrochage pour le niveau 1
+    private float _tempsNiveau1 = 0.0f;  // Attribut qui conserve le temps pour le niveau 1
+    private bool _startTime = false;
 
-    private int _accrochageNiveau3 = 0;  // Atribut qui conserve le nombre d'accrochage pour le niveau 3
-    private float _tempsNiveau3 = 0.0f;  // Attribut qui conserve le temps pour le niveau 3
+
+
+    private int _accrochageNiveau2 = 0;  // Atribut qui conserve le nombre d'accrochage pour le niveau 2
+    private float _tempsNiveau2 = 0.0f;  // Attribut qui conserve le temps pour le niveau 2
+
+    
 
     // ***** M�thodes priv�es *****
     private void Awake()
     {
-        // V�rifie si un gameObject GestionJeu est d�j� pr�sent sur la sc�ne si oui
-        // on d�truit celui qui vient d'�tre ajout�. Sinon on le conserve pour le 
-        // sc�ne suivante.
-        int nbGestionJeu = FindObjectsOfType<GestionJeu>().Length;
+        // V�rifie si un gameObject GestionJeu est d�j� pr�sent sur la sc�ne si oui
+        // on d�truit celui qui vient d'�tre ajout�. Sinon on le conserve pour le 
+        // sc�ne suivante.
+        int nbGestionJeu = FindObjectsOfType<GestionJeu>().Length;
         if (nbGestionJeu > 1)
         {
             Destroy(gameObject);
@@ -34,38 +40,19 @@ public class GestionJeu : MonoBehaviour
         }
     }
 
+
+
     private void Start()
     {
-        InstructionsDepart();  // Affiche les instructions de d�part
-    }
-
-    //Changer la couleur du terrain selon le niveau
-    //private void Update()
-    //{
-    //    //Gestion de la scèene par rapport au mouvementJoueur
-    //    Scene currentScene = SceneManager.GetActiveScene();
-    //    string sceneName = currentScene.name;
-    //    //Gestion de la texture du sol
-    //    MeshRenderer _solMat = GetComponent<MeshRenderer>();
-
-    //    if (sceneName == "Niveau1" || sceneName == "Niveau3")
-    //    {
-    //        Material _solMat = my_renderer.material;
-    //    }
-    //    else if (sceneName == "Niveau2")
-    //    {
-    //        Sol.mat(floor2)
-    //    }
+        InstructionsDepart();  // Affiche les instructions de d�part
+    }
 
 
 
-    //}
-   
-
-/*
- * M�thode qui affiche les instructions au d�part
- */
-private static void InstructionsDepart()
+    /*
+    * M�thode qui affiche les instructions au d�part
+    */
+    private static void InstructionsDepart()
     {
         Debug.Log("*** Course a obstacles");
         Debug.Log("Le but du jeu est d'atteindre le sandwich le plus rapidement possible dans chaque niveau.");
@@ -73,15 +60,19 @@ private static void InstructionsDepart()
         Debug.Log("Le jeu se termine quand le joueur a atteint le sandwich dans le niveau 3");
     }
 
+
+
     // ***** M�thodes publiques ******
-    
+
     /*
-     * M�thode publique qui permet d'augmenter le pointage de 1
-     */
+     * M�thode publique qui permet d'augmenter le pointage de 1
+     */
     public void AugmenterPointage()
     {
         _pointage++;
     }
+
+
 
     // Accesseur qui retourne la valeur de l'attribut pointage
     public int GetPointage()
@@ -89,11 +80,15 @@ private static void InstructionsDepart()
         return _pointage;
     }
 
+
+
     // Accesseur qui retourne le temps pour le niveau 1
     public float GetTempsNiv1()
     {
         return _tempsNiveau1;
     }
+
+
 
     // Accesseur qui retourne le nombre d'accrochages pour le niveau 1
     public int GetAccrochagesNiv1()
@@ -101,12 +96,24 @@ private static void InstructionsDepart()
         return _accrochageNiveau1;
     }
 
+
+
     // M�thode qui re�oit les valeurs pour le niveau 1 et qui modifie les attributs respectifs
     public void SetNiveau1(int accrochages, float tempsNiv1)
     {
+       // if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.(A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+       // {
+       //     _startTime = true;
+        //}
+
         _accrochageNiveau1 = accrochages;
         _tempsNiveau1 = tempsNiv1;
+
+
+
     }
+
+
 
     // Accesseur qui retourne le temps pour le niveau 2
     public float GetTempsNiv2()
@@ -114,11 +121,15 @@ private static void InstructionsDepart()
         return _tempsNiveau2;
     }
 
+
+
     // Accesseur qui retourne le nombre d'accrochages pour le niveau 2
     public int GetAccrochagesNiv2()
     {
         return _accrochageNiveau2;
     }
+
+
 
     // M�thode qui re�oit les valeurs pour le niveau 2 et qui modifie les attributs respectifs
     public void SetNiveau2(int accrochages, float tempsNiv2)
@@ -127,22 +138,6 @@ private static void InstructionsDepart()
         _tempsNiveau2 = tempsNiv2;
     }
 
-    // Accesseur qui retourne le temps pour le niveau 3
-    public float GetTempsNiv3()
-    {
-        return _tempsNiveau3;
-    }
 
-    // Accesseur qui retourne le nombre d'accrochages pour le niveau 3
-    public int GetAccrochagesNiv3()
-    {
-        return _accrochageNiveau3;
-    }
 
-    // M�thode qui re�oit les valeurs pour le niveau 3 et qui modifie les attributs respectifs
-    public void SetNiveau3(int accrochages, float tempsNiv3)
-    {
-        _accrochageNiveau3 = accrochages;
-        _tempsNiveau3 = tempsNiv3;
-    }
 }

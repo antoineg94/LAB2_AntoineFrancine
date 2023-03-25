@@ -6,17 +6,17 @@ public class ZonePiege : MonoBehaviour
 {
     // ***** Atributs *****
      
-    private bool _estActive = false;  // booléen qui permet de valider si la zone piège a été activée
-    [SerializeField] private List<GameObject> _listePieges = new List<GameObject>();  // Liste de gameObjects qui contient tous les gameObjects à déclencher
-    private List<Rigidbody> _listeRb = new List<Rigidbody>(); // Liste de rigidbody qui va contenir tous les rigidbody des gameObjects de la liste précédente
-    [SerializeField] private float _intensiteForce = 200;  // Intensité de la force à appliquer sur les gameObjects
+    private bool _estActive = false;  // boolï¿½en qui permet de valider si la zone piï¿½ge a ï¿½tï¿½ activï¿½e
+    [SerializeField] private List<GameObject> _listePieges = new List<GameObject>();  // Liste de gameObjects qui contient tous les gameObjects ï¿½ dï¿½clencher
+    private List<Rigidbody> _listeRb = new List<Rigidbody>(); // Liste de rigidbody qui va contenir tous les rigidbody des gameObjects de la liste prï¿½cï¿½dente
+    [SerializeField] private float _intensiteForce = 200;  // Intensitï¿½ de la force ï¿½ appliquer sur les gameObjects
 
-    // ***** Méthode privées ****
+    // ***** Mï¿½thode privï¿½es ****
     
     private void Awake()
     {
-        // Pour chacun des gameObjects définis je récupère son rigidbory
-        // et l'ajoute à la liste contenant ceux-ci
+        // Pour chacun des gameObjects dï¿½finis je rï¿½cupï¿½re son rigidbory
+        // et l'ajoute ï¿½ la liste contenant ceux-ci
         foreach(var piege in _listePieges)
         {
             _listeRb.Add(piege.GetComponent<Rigidbody>());
@@ -24,21 +24,21 @@ public class ZonePiege : MonoBehaviour
     }
 
     /*
-     * Méthode qui est appelée quand un object entre dans la zone
+     * Mï¿½thode qui est appelï¿½e quand un object entre dans la zone
      */
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && !_estActive)  // Si c'est le joueur qui est entré dans la zone et qu'elle n'a pas été activée
+        if (other.gameObject.tag == "Player" && !_estActive)  // Si c'est le joueur qui est entrï¿½ dans la zone et qu'elle n'a pas ï¿½tï¿½ activï¿½e
         {
-            // Pour chacun des RB dans la liste j'active leur gravité
+            // Pour chacun des RB dans la liste j'active leur gravitï¿½
             // et leur applique une force vers le bas
             foreach(var rb in _listeRb)
             {
-                rb.useGravity = true;  //active la gravité sur le rigidbody
-                Vector3 direction = new Vector3(0f, -1f, 0f); // Établi la direction de la force
+                rb.useGravity = true;  //active la gravitï¿½ sur le rigidbody
+                Vector3 direction = new Vector3(0f, -1f, 0f); // ï¿½tabli la direction de la force
                 rb.AddForce(direction * _intensiteForce); // Applique la force sur le rigidbody
             }
-            _estActive = true;  // Marque la zone comme activée
+            _estActive = true;  // Marque la zone comme activï¿½e
         }
     }
 }
