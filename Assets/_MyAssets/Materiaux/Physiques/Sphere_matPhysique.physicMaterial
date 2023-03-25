@@ -9,6 +9,6 @@ PhysicMaterial:
   m_Name: Sphere_matPhysique
   dynamicFriction: 1
   staticFriction: 1
-  bounciness: 0.37
+  bounciness: 0.75
   frictionCombine: 0
   bounceCombine: 3
