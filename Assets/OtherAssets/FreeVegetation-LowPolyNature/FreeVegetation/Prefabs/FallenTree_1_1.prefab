@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4425891714653858}
   - component: {fileID: 205113164073682918}
   - component: {fileID: -5523463671188370852}
+  - component: {fileID: 5577642767766718787}
+  - component: {fileID: -6895452258142485638}
   m_Layer: 0
   m_Name: FallenTree_1_1
   m_TagString: Untagged
@@ -72,6 +74,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _materielBoy0: {fileID: 0}
   _Boy0: {fileID: 0}
+--- !u!114 &5577642767766718787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752188049916452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e26dd68382074146abc346e75418cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materielBoy0: {fileID: 0}
+  _Boy0: {fileID: 0}
+--- !u!64 &-6895452258142485638
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752188049916452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1874889580073250
 GameObject:
   m_ObjectHideFlags: 0

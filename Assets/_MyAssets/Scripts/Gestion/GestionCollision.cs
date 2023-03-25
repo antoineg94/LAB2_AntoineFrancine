@@ -23,8 +23,8 @@ public class GestionCollision : MonoBehaviour
      */
     private void OnCollisionEnter(Collision collision)
     {
-        //if (collision.gameObject.tag == "Player" && !_touche)  // Si l'objet avec la collision s'est produite est le joueur et qu'il n'a pas d�j� et� touch�
-            if (!_touche)  // Si l'objet avec la collision s'est produite est le joueur et qu'il n'a pas d�j� et� touch�
+        if (collision.gameObject.tag == "Player" && !_touche)  // Si l'objet avec la collision s'est produite est le joueur et qu'il n'a pas d�j� et� touch�
+     
             {
 
             if (gameObject.name == "Boy0")
@@ -35,7 +35,7 @@ public class GestionCollision : MonoBehaviour
             }
             else
             {
-                Debug.Log("Allo");
+              
                 _gestionJeu.AugmenterPointage();  // Appelle la m�thode publique dans GestionJeu pour augmenter le pointage
                 _touche = true;  // change le bool�en � vrai pour indiqu� que l'objet a �t� touch�
                 GetComponent<MeshRenderer>().material.color = Color.red;  //change la couleur du mat�riel � rouge

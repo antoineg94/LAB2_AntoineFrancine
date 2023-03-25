@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     // ***** Attributs *****
-    [SerializeField] private float _vitesse = 800f;  //Vitesse de d�placement du joueur
+    [SerializeField] private float _vitesse = 800f;  //Vitesse de d�placement du joueur
+    [SerializeField] private float _vitesseGlace = 400f;  //Vitesse de d�placement du joueur
     private Rigidbody _rb;  // Variable pour emmagasiner le rigidbody du joueur
     private GestionJeu _gestionJeu; // attribut qui contient un objet de type GestionJeu
     public float rotationSpeed = 720f; 
@@ -13,7 +14,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         // Position initiale du joueur
-       
         if (SceneManager.GetActiveScene().name == "Niveau1")
         {
             transform.position = new Vector3(0f, 0.1f, 0f);
@@ -67,7 +67,7 @@ private void MouvementsJoueurGlace()
     float positionX = Input.GetAxis("Horizontal"); // R�cup�re la valeur de l'axe horizontal de l'input manager
     float positionZ = Input.GetAxis("Vertical");  // R�cup�re la valeur de l'axe vertical de l'input manager
     Vector3 direction = new Vector3(positionX, 0f, positionZ);  // �tabli la direction du vecteur � appliquer sur le joueur
-    _rb.AddForce(direction * Time.fixedDeltaTime * _vitesse);  // Applique une force sur le joueur dans la direction du vecteur
+    _rb.AddForce(direction * Time.fixedDeltaTime * _vitesseGlace);  // Applique une force sur le joueur dans la direction du vecteur
         direction.Normalize(); 
         if (direction != Vector3.zero)
         {
