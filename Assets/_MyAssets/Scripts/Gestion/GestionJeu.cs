@@ -101,10 +101,11 @@ public class GestionJeu : MonoBehaviour
     // M�thode qui re�oit les valeurs pour le niveau 1 et qui modifie les attributs respectifs
     public void SetNiveau1(int accrochages, float tempsNiv1)
     {
-       // if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.(A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
-       // {
-       //     _startTime = true;
-        //}
+        //if (Input.GetButtonDown('w')
+        //{
+        //    Debug.Log("test");
+        //    _startTime = true;
+       // }
 
         _accrochageNiveau1 = accrochages;
         _tempsNiveau1 = tempsNiv1;
